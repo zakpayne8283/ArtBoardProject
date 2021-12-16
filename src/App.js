@@ -9,7 +9,7 @@ export default function App() {
   const [appState, setAppState] = useState({ museum: "AIC" });
 
   return (
-    <div className="App">
+    <div id="App">
       <Board museum={appState.museum} />
     </div>
   );

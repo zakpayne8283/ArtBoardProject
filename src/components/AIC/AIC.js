@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Masonry from 'react-masonry-css';
 
 import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
 
 export default function AIC(props) {
   const [artData, setArtData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [dataError, setDataError] = useState(false);
 
+  // Fetch Data
   useEffect(() => {
     fetch("https://api.artic.edu/api/v1/artworks/search?limit=25&fields=id,image_id,title,artist_title")
       .then((res) => res.json())
@@ -24,9 +24,11 @@ export default function AIC(props) {
       );
   }, [])
 
+  // Return error message on error
   if (dataError) {
     return <div>Error: {dataError.message}</div>;
   } else if (!isLoaded) {
+    // Loading data
     return <div>Loading...</div>;
   } else {
     return (
