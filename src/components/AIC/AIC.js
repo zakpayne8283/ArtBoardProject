@@ -7,15 +7,17 @@ export default function AIC(props) {
   const [artData, setArtData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [dataError, setDataError] = useState(false);
+  const [dataPage, setDataPage] = useState(1);
 
   // Fetch Data
   useEffect(() => {
-    fetch("https://api.artic.edu/api/v1/artworks/search?limit=25&fields=id,image_id,title,artist_title")
+    fetch("https://api.artic.edu/api/v1/artworks/search?limit=25&page=" + dataPage + "&fields=id,image_id,title,artist_title")
       .then((res) => res.json())
       .then(
         (result) => {
           setArtData(result);
           setIsLoaded(true);
+          setDataPage(dataPage + 1);
         },
         (error) => {
           setDataError(error);
