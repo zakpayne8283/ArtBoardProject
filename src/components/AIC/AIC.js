@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Masonry from 'react-masonry-css';
+
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 
 export default function AIC(props) {
   const [artData, setArtData] = useState([]);
@@ -6,7 +10,7 @@ export default function AIC(props) {
   const [dataError, setDataError] = useState(false);
 
   useEffect(() => {
-    fetch("https://api.artic.edu/api/v1/artworks/search?limit=5&fields=id,image_id,title,artist_title")
+    fetch("https://api.artic.edu/api/v1/artworks/search?limit=25&fields=id,image_id,title,artist_title")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -26,16 +30,17 @@ export default function AIC(props) {
     return <div>Loading...</div>;
   } else {
     return (
-      <div>
+      <Masonry
+        breakpointCols={3}
+        className="masonry-grid"
+        columnClassName="masonry-grid_column"
+      >
         {artData.data.map((item) => (
-          // <li>{JSON.stringify(item)}</li>
-          <div>
-            <img src={"https://www.artic.edu/iiif/2/" + item.image_id + "/full/843,/0/default.jpg"} alt={item.title} />
-            <p>{item.title}</p>
-            <p>{item.artist_title}</p>
-          </div>
+            <Card>
+              <Card.Img variant="top" src={"https://www.artic.edu/iiif/2/" + item.image_id + "/full/843,/0/default.jpg"} alt={item.title} />
+            </Card>
         ))}
-      </div>
+      </Masonry>
     );
   }
 }
