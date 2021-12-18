@@ -1,3 +1,6 @@
+/*
+  TODO: Move this to an SCSS file
+*/
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -21,6 +24,28 @@
   margin-bottom: 30px;
   border: none;
   border-radius: none;
+}
+
+.masonry-grid_column .card section {
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: lightgray;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+  cursor: pointer;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.15s ease;
+}
+
+.masonry-grid_column .card:hover section {
+  visibility: visible;
+  opacity: 0.9;
 }
 
 #App > .container {

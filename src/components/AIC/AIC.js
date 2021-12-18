@@ -58,8 +58,12 @@ export default function AIC(props) {
           columnClassName="masonry-grid_column"
         >
           {artData.map((item) => (
-              <Card>
+              <Card key={item.id}>
                 <Card.Img variant="top" src={"https://www.artic.edu/iiif/2/" + item.image_id + "/full/843,/0/default.jpg"} alt={item.title} />
+                <section>
+                  <h2>{item.title}</h2>
+                  <p>{item.artist_title}</p>
+                </section>
               </Card>
           ))}
         </Masonry>        
