@@ -56,7 +56,7 @@ export default function AICCard(props) {
             <Card key={item.id} onClick={handleOpen}>
                 <Card.Img variant="top" src={imageUrl} alt={item.title} />
                 <section>
-                    <h2>{item.title}</h2>
+                    <h3>{item.title}</h3>
                     <p>{item.artist_title}</p>
                 </section>
             </Card>

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+
+import { _AppContext } from "../../context";
 
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,12 +10,20 @@ import Navbar from 'react-bootstrap/Navbar';
 
 export default function AppNavbar(props) {
 
+    const [ appState, dispatch ] = useContext(_AppContext);
+    const [ typing, setTyping ] = useState(0);
+
     const callUpdateSearch = (e) => {
         e.preventDefault();
         
-        e.target.value == '' ? e.target.value : false;
+        if (typing) {
+            clearTimeout(typing);
+        }
 
-        props.updateSearch(e.target.value);
+        setTyping(setTimeout(function() {
+            dispatch({ type: 'dataPage', dataPage: 1})
+            dispatch({ type: 'queryURL', queryURL: "https://api.artic.edu/api/v1/artworks/search?q=" + e.target.value + "&limit=25&fields=id,image_id,title,artist_title"})
+        }, 500))
     }
 
     return (
