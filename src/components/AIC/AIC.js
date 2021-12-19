@@ -13,7 +13,16 @@ export default function AIC(props) {
 
   // Fetch Data
   useEffect(() => {
-    fetch("https://api.artic.edu/api/v1/artworks/search?limit=25&page=" + dataPage + "&fields=id,image_id,title,artist_title")
+    console.log(props);
+
+    let queryURL = '';
+    if (props.queryURL == false) {
+      queryURL = "https://api.artic.edu/api/v1/artworks/search?limit=25&page=1&fields=id,image_id,title,artist_title"
+    } else {
+      queryURL = props.queryURL + '&page=1';
+    }
+
+    fetch(queryURL)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -26,7 +35,7 @@ export default function AIC(props) {
           setIsLoaded(true);
         }
       );
-  }, []);
+  }, [props.queryURL]);
 
   const loadMore = () => {
     fetch("https://api.artic.edu/api/v1/artworks/search?limit=25&page=" + dataPage + "&fields=id,image_id,title,artist_title")

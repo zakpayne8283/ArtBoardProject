@@ -7,12 +7,25 @@ import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
-  const [appState, setAppState] = useState({ museum: "AIC" });
+  const initialAppState = {
+    museum: "AIC",
+    queryURL: false
+  }
+
+  const [appState, setAppState] = useState(initialAppState);
+
+  const updateSearch = (searchRaw) => {
+    // TODO: Some sort of sanitization
+    // https://api.artic.edu/api/v1/artworks/search?q=Van%20Gogh&limit=5
+    var oldAppState = appState;
+    oldAppState.queryURL = "https://api.artic.edu/api/v1/artworks/search?q=" + searchRaw + "&limit=25";
+    setAppState(oldAppState);
+  }
 
   return (
     <div id="App">
-      <AppNavbar /> 
-      <Board museum={appState.museum} />
+      <AppNavbar updateSearch={updateSearch} /> 
+      <Board museum={appState.museum} queryURL={appState.queryURL} />
     </div>
   );
 }

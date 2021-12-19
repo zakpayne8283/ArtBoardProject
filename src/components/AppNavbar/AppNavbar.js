@@ -6,7 +6,16 @@ import FormControl from 'react-bootstrap/FormControl';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-export default function AppNavbar() {
+export default function AppNavbar(props) {
+
+    const callUpdateSearch = (e) => {
+        e.preventDefault();
+        
+        e.target.value == '' ? e.target.value : false;
+
+        props.updateSearch(e.target.value);
+    }
+
     return (
         <Navbar className="fixed-top" bg="light" expand="lg" id="Nav"> 
             <Container>
@@ -21,6 +30,7 @@ export default function AppNavbar() {
                                 placeholder="Search"
                                 className="me-2"
                                 aria-label="Search"
+                                onChange={(e) => callUpdateSearch(e)}
                             />
                         </Form>
                     </Nav>
