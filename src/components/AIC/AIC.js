@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Masonry from 'react-masonry-css';
 
-import Card from 'react-bootstrap/Card';
+import AICCard from "./AICCard";
+
 import Button from 'react-bootstrap/Button';
 
 export default function AIC(props) {
@@ -58,13 +59,7 @@ export default function AIC(props) {
           columnClassName="masonry-grid_column"
         >
           {artData.map((item) => (
-              <Card key={item.id}>
-                <Card.Img variant="top" src={"https://www.artic.edu/iiif/2/" + item.image_id + "/full/843,/0/default.jpg"} alt={item.title} />
-                <section>
-                  <h2>{item.title}</h2>
-                  <p>{item.artist_title}</p>
-                </section>
-              </Card>
+            <AICCard item={item} />
           ))}
         </Masonry>        
         <Button onClick={loadMore}>Load More</Button> {/* TODO: Change this to infinity scroll */}

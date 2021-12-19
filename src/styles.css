@@ -7,25 +7,25 @@
 }
 
 .masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: -webkit-box;
+  display: -ms-flexbox; 
   display: flex;
-  margin-left: -30px; /* gutter size offset */
+  margin-left: -30px;
   width: auto;
 }
 .masonry-grid_column {
-  padding-left: 30px; /* gutter size */
+  padding-left: 30px;
   background-clip: padding-box;
 }
 
-/* Style your items */
-.masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+.masonry-grid_column > div { 
   background: grey;
   margin-bottom: 30px;
   border: none;
   border-radius: none;
 }
 
+/* TODO: fix overflow data */
 .masonry-grid_column .card section {
   visibility: hidden;
   display: flex;
@@ -46,6 +46,56 @@
 .masonry-grid_column .card:hover section {
   visibility: visible;
   opacity: 0.9;
+}
+
+.artwork-modal .modal-dialog {
+  height: calc(100% - 3.5rem);
+}
+
+.artwork-modal .modal-dialog .modal-content {
+  height: 100%;
+}
+
+.artwork-modal .modal-dialog .modal-content img {
+  max-width: 100%;
+}
+
+/* Modal Image Height Adjustments */
+.artwork-modal .modal-body {
+  height: calc(100% - 4.5rem);
+}
+
+.artwork-modal .modal-body .container,
+.artwork-modal .modal-body .row,
+.artwork-modal .modal-body .container .row div:nth-child(1) {
+  height: 100%;
+}
+
+.artwork-modal .modal-body .container img {
+  max-height: 100%;
+}
+
+.artwork-modal .modal-body .container .row > div:nth-child(1) {
+  text-align: center;
+  justify-content: center;
+}
+
+.artwork-modal .modal-body .container .row > div {
+  display: flex;
+  align-items: center;
+  max-height: 100%;
+}
+
+.artwork-modal .modal-body .container .row > div:nth-child(2) {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.artwork-modal .modal-body .container .row section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 
 #App > .container {
