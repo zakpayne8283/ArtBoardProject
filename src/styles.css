@@ -98,6 +98,23 @@
   flex-direction: column;
 }
 
+#App {
+  padding-top: 56px;
+}
+
 #App > .container {
   padding-top: 30px;
+}
+
+#Nav .navbar-nav {
+  display: flex;
+  width: 100%;
+}
+
+#Nav .navbar-text {
+  width: 20.5%; 
+}
+
+#Nav form {
+  width: 50%;
 }
