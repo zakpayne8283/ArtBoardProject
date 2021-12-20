@@ -48,10 +48,6 @@
   opacity: 0.9;
 }
 
-.artwork-modal .modal-dialog {
-  height: calc(100% - 3.5rem);
-}
-
 .artwork-modal .modal-dialog .modal-content {
   height: 100%;
 }

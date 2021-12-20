@@ -60,7 +60,7 @@ export default function AICCard(props) {
                     <p>{item.artist_title}</p>
                 </section>
             </Card>
-            <Modal backdrop="static" show={showModal} onHide={handleClose} size="xl" className="artwork-modal">
+            <Modal backdrop="static" show={showModal} onHide={handleClose} fullscreen={true} size="xl" className="artwork-modal">
                 <Modal.Header closeButton>
                     <Modal.Title>{item.title}</Modal.Title>
                 </Modal.Header>
