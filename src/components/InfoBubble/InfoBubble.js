@@ -47,6 +47,7 @@ export default function InfoBubble() {
                                             <li>Links to artists</li>
                                             <li>Caching</li>
                                             <li>More museums</li>
+                                            <li>Minor CSS fixes</li>
                                         </ul>
                                     </Tab>
                                 </Tabs>
