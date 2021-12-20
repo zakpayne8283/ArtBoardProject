@@ -115,3 +115,30 @@
 #Nav form {
   width: 50%;
 }
+
+#InfoBubble {
+  position: fixed;
+  bottom: 3.5rem;
+  left: 3.5rem;
+  background-color: #b50938;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#InfoBubble:hover {
+  padding: 1.25rem 1.75rem;
+  bottom: 3.25rem;
+  left: 3.25rem;
+}
+
+#InfoBubble > span {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.info-modal .tab-content {
+  padding: 1rem;
+}

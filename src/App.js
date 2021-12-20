@@ -7,6 +7,7 @@ import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { AppContext } from "./context";
+import InfoBubble from "./components/InfoBubble/InfoBubble";
 
 export default function App() {  
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <div id="App">
         <AppNavbar /> 
         <Board />
+        <InfoBubble />
       </div>
     </AppContext>
   );
