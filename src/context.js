@@ -12,7 +12,6 @@ const initialAppState = {
 }
 
 const reducer = (state, action) => {
-    console.log(action.type);
     switch (action.type) {
         case 'museum':
             return { ...state, museum: action.museum }

@@ -41,11 +41,11 @@ export default function AIC(props) {
   }, [appState.dataPage, appState.queryURL]);
 
   const loadMore = () => {
-    dispatch({ type: 'dataPage', dataPage: dataPage + 1});
+    dispatch({ type: 'dataPage', dataPage: appState.dataPage + 1});
   }
 
   const showButton = () => {
-    if (appState.artData.length == (25 * appState.dataPage)) {
+    if (appState.artData.length == (24 * appState.dataPage)) {
       return <Button onClick={loadMore}>Load More</Button>
     }
   }
