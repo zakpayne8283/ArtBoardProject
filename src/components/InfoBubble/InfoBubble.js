@@ -48,7 +48,7 @@ export default function InfoBubble() {
                                             <li>Caching</li>
                                             <li>More museums</li>
                                             <li>Minor CSS fixes</li>
-                                            <li>Infinite Scroll</li>
+                                            <li><strike>Infinite Scroll</strike></li>
                                             <li>Dark Mode</li>
                                         </ul>
                                     </Tab>

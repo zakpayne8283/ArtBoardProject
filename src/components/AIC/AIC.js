@@ -40,16 +40,6 @@ export default function AIC(props) {
       );
   }, [appState.dataPage, appState.queryURL]);
 
-  const loadMore = () => {
-    dispatch({ type: 'dataPage', dataPage: appState.dataPage + 1});
-  }
-
-  const showButton = () => {
-    if (appState.artData.length == (24 * appState.dataPage)) {
-      return <Button onClick={loadMore}>Load More</Button>
-    }
-  }
-
   // Return error message on error
   if (appState.errorMessage != false) {
     return <div>Error: {dataError.message}</div>;
@@ -68,7 +58,6 @@ export default function AIC(props) {
             <AICCard item={item} />
           ))}
         </Masonry>        
-        {showButton()}
       </>
     );
   }
