@@ -8,7 +8,8 @@ const initialAppState = {
     dataPage: 1,
     artData: [],
     dataLoaded: false,
-    errorMessage: false
+    errorMessage: false,
+    darkMode: false
 }
 
 const reducer = (state, action) => {
@@ -25,6 +26,8 @@ const reducer = (state, action) => {
             return { ...state, dataLoaded: action.dataLoaded }
         case 'errorMessage':
             return { ...state, errorMessage: action.errorMessage }
+        case 'darkMode':
+            return { ...state, darkMode: action.darkMode }
     }
 }
 

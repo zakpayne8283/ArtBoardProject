@@ -55,7 +55,7 @@ export default function AIC(props) {
           columnClassName="masonry-grid_column"
         >
           {appState.artData.map((item) => (
-            <AICCard item={item} />
+            <AICCard item={item} darkMode={appState.darkMode} />
           ))}
         </Masonry>        
       </>

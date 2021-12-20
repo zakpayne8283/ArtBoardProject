@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import Board from "./components/Board/Board"; // TODO: Make this not Board/Board
 import AppNavbar from "./components/AppNavbar/AppNavbar";
@@ -6,16 +6,26 @@ import AppNavbar from "./components/AppNavbar/AppNavbar";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { AppContext } from "./context";
+import { AppContext, _AppContext } from "./context";
 import InfoBubble from "./components/InfoBubble/InfoBubble";
 
-export default function App() {  
+export default function App() {
+
+  const [ darkMode, setDarkMode ] = useState(false);
+
+  const toggleDarkMode = () => {
+    console.log('parent');
+    setDarkMode(!darkMode);
+  }
+
+  let classes = darkMode ? 'dark-mode' : '';
+
   return (
     <AppContext>
-      <div id="App">
+      <div id="App" className={classes}>
         <AppNavbar /> 
         <Board />
-        <InfoBubble />
+        <InfoBubble toggleDarkMode={toggleDarkMode} />
       </div>
     </AppContext>
   );

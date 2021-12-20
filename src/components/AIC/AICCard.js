@@ -87,10 +87,10 @@ export default function AICCard(props) {
                 </section>
             </Card>
             <Modal backdrop="static" show={showModal} onHide={handleClose} fullscreen={true} size="xl" className="artwork-modal">
-                <Modal.Header closeButton>
+                <Modal.Header closeButton className={props.darkMode ? 'dark-mode' : ''} >
                     <Modal.Title>{item.title}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="show-grid" style={{height: "100% - 4.5rem"}}>
+                <Modal.Body className={props.darkMode ? 'dark-mode show-grid' : 'show-grid'} style={{height: "100% - 4.5rem"}}>
                     <Container>
                         <Row>
                             <Col xs={12} md={8} lg={6}>
