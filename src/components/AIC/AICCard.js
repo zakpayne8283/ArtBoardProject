@@ -2,6 +2,7 @@
 import React, { useState } from "react"
 
 import AICModalDetails from "./AICModalDetails";
+import AICModalArtist from "./AICModalArtist";
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -10,6 +11,8 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 export default function AICCard(props) {
 
@@ -18,6 +21,8 @@ export default function AICCard(props) {
     const [showModal, setShowModal] = useState(false);
     const [modalDetails, setModalDetails] = useState([]);
     const [detailsLoaded, setDetailsLoaded] = useState(false);
+    const [artistDetails, setArtistDetails] = useState([]);
+    const [artistLoaded, setArtistLoaded] = useState(false);
 
     const handleClose = () => setShowModal(false);
 
@@ -30,6 +35,18 @@ export default function AICCard(props) {
                 (result) => {
                     setModalDetails(result);
                     setDetailsLoaded(true);
+                    console.log(result);
+                    fetch("https://api.artic.edu/api/v1/agents/" + result.data.artist_id)
+                        .then((aRes) => aRes.json())
+                        .then(
+                            (artistResult) => {
+                                setArtistDetails(artistResult);
+                                setArtistLoaded(true);
+                            },
+                            (error) => {
+                                alert("ERROR");
+                            }
+                        )
                 },
                 (error) => {
                     setDetailsLoaded(true);
@@ -44,6 +61,16 @@ export default function AICCard(props) {
             return <p><strong>Failed to Load Data</strong></p>
         } else {
             return <AICModalDetails data={modalDetails} />
+        }
+    }
+
+    const renderArtist = () => {
+        if (artistLoaded == false) {
+            return <p>Loading...</p>
+        } else if (artistLoaded == true && artistDetails == []) {
+            return <p><strong>Failed to Load Data</strong></p>
+        } else {
+            return <AICModalArtist data={artistDetails} />
         }
     }
 
@@ -71,9 +98,18 @@ export default function AICCard(props) {
                                 <Image fluid src={imageUrl} alt={item.title} />
                             </Col>
                             <Col xs={6} md={4} lg={6}>
-                                {
-                                    renderDetails()
-                                }
+                                <Tabs defaultActiveKey="details">
+                                    <Tab eventKey="details" title="Details">
+                                    {
+                                        renderDetails()
+                                    }
+                                    </Tab>
+                                    <Tab eventKey="artist" title="Artist">
+                                    {
+                                        renderArtist()
+                                    }
+                                    </Tab>
+                                </Tabs>
                             </Col>
                         </Row>
                     </Container>
