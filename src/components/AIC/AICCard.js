@@ -35,7 +35,6 @@ export default function AICCard(props) {
                 (result) => {
                     setModalDetails(result);
                     setDetailsLoaded(true);
-                    console.log(result);
                     fetch("https://api.artic.edu/api/v1/agents/" + result.data.artist_id)
                         .then((aRes) => aRes.json())
                         .then(

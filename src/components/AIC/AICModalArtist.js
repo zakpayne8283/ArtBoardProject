@@ -4,9 +4,6 @@ import React from "react";
 
 export default function AICModalArtist(props) {
     var data = props.data.data;
-
-    console.log(data);
-
     if (data == undefined) {
         return <section><p>No information available</p></section>
     }
