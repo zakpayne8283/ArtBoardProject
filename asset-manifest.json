@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ArtBoardProject/static/css/main.c98c844b.chunk.css",
-    "main.js": "/ArtBoardProject/static/js/main.566f3312.chunk.js",
-    "main.js.map": "/ArtBoardProject/static/js/main.566f3312.chunk.js.map",
+    "main.css": "/ArtBoardProject/static/css/main.68f6821d.chunk.css",
+    "main.js": "/ArtBoardProject/static/js/main.8fcdf4fd.chunk.js",
+    "main.js.map": "/ArtBoardProject/static/js/main.8fcdf4fd.chunk.js.map",
     "runtime-main.js": "/ArtBoardProject/static/js/runtime-main.234ae949.js",
     "runtime-main.js.map": "/ArtBoardProject/static/js/runtime-main.234ae949.js.map",
     "static/css/2.cbedb215.chunk.css": "/ArtBoardProject/static/css/2.cbedb215.chunk.css",
-    "static/js/2.5ea48e27.chunk.js": "/ArtBoardProject/static/js/2.5ea48e27.chunk.js",
-    "static/js/2.5ea48e27.chunk.js.map": "/ArtBoardProject/static/js/2.5ea48e27.chunk.js.map",
+    "static/js/2.037f32f7.chunk.js": "/ArtBoardProject/static/js/2.037f32f7.chunk.js",
+    "static/js/2.037f32f7.chunk.js.map": "/ArtBoardProject/static/js/2.037f32f7.chunk.js.map",
     "index.html": "/ArtBoardProject/index.html",
     "static/css/2.cbedb215.chunk.css.map": "/ArtBoardProject/static/css/2.cbedb215.chunk.css.map",
-    "static/css/main.c98c844b.chunk.css.map": "/ArtBoardProject/static/css/main.c98c844b.chunk.css.map",
-    "static/js/2.5ea48e27.chunk.js.LICENSE.txt": "/ArtBoardProject/static/js/2.5ea48e27.chunk.js.LICENSE.txt"
+    "static/css/main.68f6821d.chunk.css.map": "/ArtBoardProject/static/css/main.68f6821d.chunk.css.map",
+    "static/js/2.037f32f7.chunk.js.LICENSE.txt": "/ArtBoardProject/static/js/2.037f32f7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.234ae949.js",
     "static/css/2.cbedb215.chunk.css",
-    "static/js/2.5ea48e27.chunk.js",
-    "static/css/main.c98c844b.chunk.css",
-    "static/js/main.566f3312.chunk.js"
+    "static/js/2.037f32f7.chunk.js",
+    "static/css/main.68f6821d.chunk.css",
+    "static/js/main.8fcdf4fd.chunk.js"
   ]
 }
