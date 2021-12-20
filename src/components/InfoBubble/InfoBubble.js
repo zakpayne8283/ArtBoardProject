@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/esm/Button';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
+import { _AppContext } from "../../context";
 
-export default function InfoBubble() {
+export default function InfoBubble(props) {
+    const [ appState, dispatch ] = useContext(_AppContext);
+
     const [showModal, setShowModal] = useState(false);
 
     const handleClose = () => setShowModal(false);
 
     const handleOpen = () => {
         setShowModal(true);
+    }
+
+    const toggleDarkMode = () => {
+        dispatch({type: 'darkMode', darkMode: !appState.darkMode})
+        props.toggleDarkMode();
     }
 
     return (
@@ -49,8 +58,11 @@ export default function InfoBubble() {
                                             <li>More museums</li>
                                             <li>Minor CSS fixes</li>
                                             <li><strike>Infinite Scroll</strike></li>
-                                            <li>Dark Mode</li>
+                                            <li><strike>Dark Mode</strike></li>
                                         </ul>
+                                    </Tab>
+                                    <Tab eventKey="options" title="Options">
+                                        <Button onClick={toggleDarkMode}>Toggle Light/Dark Mode</Button>
                                     </Tab>
                                 </Tabs>
                             </Col>

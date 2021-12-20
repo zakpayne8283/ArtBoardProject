@@ -43,6 +43,11 @@
   transition: visibility 0s, opacity 0.15s ease;
 }
 
+.dark-mode .masonry-grid_column .card section {
+  background-color: #333;
+  color: white;
+}
+
 .masonry-grid_column .card:hover section {
   visibility: visible;
   opacity: 0.9;
@@ -50,6 +55,28 @@
 
 .artwork-modal .modal-dialog .modal-content {
   height: 100%;
+}
+
+.modal-header.dark-mode,
+.modal-body.dark-mode {
+  background-color: #333;
+  color: white;
+  border-color: black;
+}
+
+.modal-header.dark-mode *,
+.modal-body.dark-mode * {
+  border-color: black;
+}
+
+.modal-body.dark-mode button {
+  color: white;
+}
+
+.modal-body.dark-mode button.active {
+  background-color: #444;
+  color: white;
+  border-color: black;
 }
 
 .artwork-modal .modal-dialog .modal-content img {
@@ -99,6 +126,10 @@
   padding-bottom: 30px;
 }
 
+#App.dark-mode {
+  background-color: #333;
+}
+
 #App > .container {
   padding-top: 30px;
 }
@@ -114,6 +145,10 @@
 
 #Nav form {
   width: 50%;
+}
+
+#Nav.bg-dark * {
+  color: white;
 }
 
 #InfoBubble {

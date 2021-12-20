@@ -26,10 +26,12 @@ export default function AppNavbar(props) {
         }, 500))
     }
 
+    let background = appState.darkMode ? "dark" : "light";
+
     return (
-        <Navbar className="fixed-top" bg="light" expand="lg" id="Nav"> 
+        <Navbar className="fixed-top" bg={background} expand="lg" id="Nav"> 
             <Container>
-                <Navbar.Brand href="#home">Art Lookup</Navbar.Brand>
+                <Navbar.Brand href="#" onClick={(e) => e.preventDefault()}>Art Lookup</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
