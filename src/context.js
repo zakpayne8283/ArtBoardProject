@@ -4,7 +4,7 @@ export const _AppContext = React.createContext();
 
 const initialAppState = {
     museum: "AIC",
-    queryURL: "https://api.artic.edu/api/v1/artworks/search?limit=25&fields=id,image_id,title,artist_title",
+    queryURL: "https://api.artic.edu/api/v1/artworks/search?limit=24&fields=id,image_id,title,artist_title",
     dataPage: 1,
     artData: [],
     dataLoaded: false,

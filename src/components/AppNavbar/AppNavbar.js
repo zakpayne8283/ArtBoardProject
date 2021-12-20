@@ -22,7 +22,7 @@ export default function AppNavbar(props) {
 
         setTyping(setTimeout(function() {
             dispatch({ type: 'dataPage', dataPage: 1})
-            dispatch({ type: 'queryURL', queryURL: "https://api.artic.edu/api/v1/artworks/search?q=" + e.target.value + "&limit=25&fields=id,image_id,title,artist_title"})
+            dispatch({ type: 'queryURL', queryURL: "https://api.artic.edu/api/v1/artworks/search?q=" + e.target.value + "&limit=24&fields=id,image_id,title,artist_title"})
         }, 500))
     }
 
